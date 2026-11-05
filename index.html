@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة وتحليل نتائج الطلاب</title>
+    <!-- استخدام Tailwind CSS لتصميم رائع وجذاب -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen p-6">
+
+    <div class="max-w-5xl mx-auto">
+        <!-- عنوان البرنامج -->
+        <header class="text-center mb-10">
+            <h1 class="text-3xl font-bold text-cyan-400 mb-2">🎓 نظام إدارة وتحليل نتائج الطلاب</h1>
+            <p class="text-slate-400">لوحة تحكم تفاعلية لعرض تقارير الأداء ولجنة الرأفة الأكاديمية</p>
+        </header>
+
+        <!-- جدول أداء الطلاب العام -->
+        <section class="mb-10 bg-slate-800 rounded-xl p-6 shadow-xl border border-slate-700">
+            <h2 class="text-xl font-semibold text-emerald-400 mb-4">📊 تقرير أداء الطلاب العام</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-right border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-700 text-slate-400">
+                            <th class="py-3 px-4">رقم الجلوس</th>
+                            <th class="py-3 px-4">اسم الطالب</th>
+                            <th class="py-3 px-4">المتوسط</th>
+                            <th class="py-3 px-4">التقدير</th>
+                            <th class="py-3 px-4">نسبة الحضور</th>
+                            <th class="py-3 px-4">النتيجة النهائية</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTableBody">
+                        <!-- سيتم تعبئته ديناميكياً عبر JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- قسم لجنة الرأفة -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- الطلاب المتعثرين -->
+            <section class="bg-slate-800 rounded-xl p-6 shadow-xl border border-slate-700">
+                <h2 class="text-xl font-semibold text-amber-400 mb-4">🛑 تقرير لجنة الرأفة (قبل وبعد التعديل)</h2>
+                <div id="graceContainer" class="space-y-3">
+                    <!-- سيتم تعبئته ديناميكياً -->
+                </div>
+            </section>
+
+            <!-- ملخص وحسابات الرأفة -->
+            <section class="bg-slate-800 rounded-xl p-6 shadow-xl border border-slate-700 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">📈 إحصائيات لجنة الرأفة</h2>
+                    <p class="text-slate-300 mb-2">إجمالي عدد الطلاب المتعثرين المشمولين: <span id="strugglingCount" class="font-bold text-cyan-400">0</span></p>
+                    <p class="text-slate-300 mb-4">المتوسط العام للطلاب المتعثرين بعد إضافة درجات الرأفة (مع درع الحماية):</p>
+                </div>
+                <div class="bg-slate-900 p-4 rounded-lg text-center border border-slate-700">
+                    <span id="graceAverageDisplay" class="text-3xl font-extrabold text-emerald-400">0.00</span>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ربط ملف الجافاسكريبت -->
+    <script src="app.js"></script>
+</body>
+</html>
